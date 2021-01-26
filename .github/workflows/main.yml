@@ -1,0 +1,29 @@
+
+name: Common Infrastructure
+on:
+  push:
+    branches: [ features/github-actions ]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2.2.2
+        with:
+          name: template
+          path: day4/apps/infrastructure/templates/scm-common.json
+          if-no-files-found: error
+          retention-days: 90
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v2.0.8
+        with:
+          name: template
+          path: template.json
+      - name: Print template
+        run: cat template.jspn
