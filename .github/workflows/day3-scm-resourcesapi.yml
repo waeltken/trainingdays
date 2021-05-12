@@ -149,7 +149,7 @@ jobs:
           name: imageresizer
 
       - name: Deploy ImageResizer Function
-        uses: Azure/functions-action@v1
+        uses: Azure/functions-action@v1.3.2
         with:
           app-name: ${{ steps.infrastructure.outputs.imageResizerFunctionName }}
           package: ./${{ env.RESIZER_PACKAGE_NAME }}
@@ -214,7 +214,7 @@ jobs:
           name: imageresizer
 
       - name: Deploy ImageResizer Function
-        uses: Azure/functions-action@v1
+        uses: Azure/functions-action@v1.3.2
         with:
           app-name: ${{ steps.infrastructure.outputs.imageResizerFunctionName }}
           package: ./${{ env.RESIZER_PACKAGE_NAME }}
