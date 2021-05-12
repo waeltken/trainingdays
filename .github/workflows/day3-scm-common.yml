@@ -72,7 +72,7 @@ jobs:
             fi
 
       - name: Deploy to dev environment
-        uses: azure/arm-deploy@v1
+        uses: azure/arm-deploy@1.0.3
         with:
           resourceGroupName: ${{ env.RESOURCE_GROUP_NAME }}
           template: ./commonmain.json
@@ -112,7 +112,7 @@ jobs:
             fi
 
       - name: Deploy to dev environment
-        uses: azure/arm-deploy@v1
+        uses: azure/arm-deploy@1.0.3
         with:
           resourceGroupName: ${{ env.RESOURCE_GROUP_NAME }}
           template: ./commonmain.json
