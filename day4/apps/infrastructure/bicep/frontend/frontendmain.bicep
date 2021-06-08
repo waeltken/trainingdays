@@ -9,18 +9,18 @@ var resourceTag = {
   Component: 'SCM-Frontend'
 }
 
-module storage 'storage.bicep' = {
-  name: 'deployStorageFrontend'
+module staticWebapp 'staticwebapp.bicep' = {
+  name: 'deployStaticWebappFrontend'
   params: {
     env: env
     resourceTag: resourceTag
   }
 }
 
-output applicationInsightsKey string = storage.outputs.applicationInsightsKey
-output contactsApiEndpoint string = storage.outputs.contactsApiEndpoint
-output resourcesApiEndpoint string = storage.outputs.resourcesApiEndpoint
-output searchApiEndpoint string = storage.outputs.searchApiEndpoint
-output visitReportsEndpoint string = storage.outputs.visitReportsApiEndpoint
-output storageAccountName string = storage.outputs.storageAccountName
-output storageAccountWebEndpoint string = storage.outputs.storageAccountWebEndpoint
+output applicationInsightsKey string = staticWebapp.outputs.applicationInsightsKey
+output contactsApiEndpoint string = staticWebapp.outputs.contactsApiEndpoint
+output resourcesApiEndpoint string = staticWebapp.outputs.resourcesApiEndpoint
+output searchApiEndpoint string = staticWebapp.outputs.searchApiEndpoint
+output visitReportsEndpoint string = staticWebapp.outputs.visitReportsApiEndpoint
+output staticWebappName string = staticWebapp.outputs.staticWebappName
+output staticWebappEndpoint string = staticWebapp.outputs.staticWebappEndpoint
