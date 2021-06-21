@@ -14,8 +14,8 @@ jobs:
         with:
           script: |
             github.issues.create({
-              context.repo.owner,
-              context.repo.repo,
-              "Hello World! 👋",
-              "Hello 🌍 from GitHub Actions!"
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: "Hello World! 👋",
+              body: "Hello 🌍 from GitHub Actions!"
             });
