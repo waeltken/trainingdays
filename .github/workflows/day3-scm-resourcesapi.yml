@@ -125,7 +125,7 @@ jobs:
           name: bicep
 
       - name: Deploy infrastructure to dev environment
-        uses: azure/arm-deploy@v1
+        uses: azure/arm-deploy@1.0.3
         id: infrastructure
         with:
           resourceGroupName: ${{ env.RESOURCE_GROUP_NAME }}
@@ -190,7 +190,7 @@ jobs:
           name: bicep
 
       - name: Deploy infrastructure to dev environment
-        uses: azure/arm-deploy@v1
+        uses: azure/arm-deploy@1.0.3
         id: infrastructure
         with:
           resourceGroupName: ${{ env.RESOURCE_GROUP_NAME }}
